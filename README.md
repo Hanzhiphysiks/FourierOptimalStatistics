@@ -1,4 +1,4 @@
-# Fourier-domain PTA Detection Statistic + Imhof p-value
+# Fourier-domain PTA Detection Statistic + p-value
 
 This repository implements a **Fourier-domain PTA detection statistic** together with **right-tail p-value evaluation** under $H_0$ using **Imhof’s method** (generalized $\chi^2$). It also includes a lightweight `get_phi` implementation (`PTA_Lite`) to avoid `enterprise`-level constraints, while keeping the same $\phi$-structure: per-pulsar red noise (RN) + a common GW process with optional Hellings–Downs correlations.
 
@@ -100,7 +100,7 @@ The code imports (at least): `numpy`, `scipy`, `matplotlib`, `pandas`, `pyarrow`
 ### Step 1: Export samples to JSON
 Input files:
 - `param_list.txt`
-- `chain_1.txt`
+- `chain (just try the last few elements) .txt`
 
 Run the provided script section to generate:
 - `samples.json`
