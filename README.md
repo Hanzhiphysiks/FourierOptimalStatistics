@@ -6,7 +6,7 @@ This repository implements a **Fourier-domain PTA detection statistic** together
 
 ## What’s inside
 
-### 1) Portable parameter dump (`param_list.txt` + chain → `samples.json`)
+### 1) Portable parameter dump (`param_list.txt` + `chain (just try the last few elements) .txt` → `samples.json`)
 - Reads parameter names from `param_list.txt`
 - Reads the chain matrix from the sample chain file in  
   `some sample data that you can play with/`
