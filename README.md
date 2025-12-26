@@ -37,10 +37,10 @@ Arrays are converted into JSON-like objects that preserve shape
   - `mode="curn"` (H0): returns a list (length $P$) of per-pulsar diagonals  
     `rho_rn + rho_gw_padded`
   - `mode="hd"` (H1): returns the full correlated matrix
-    $$
+    $
     \Phi_C = I\otimes \mathrm{diag}(\rho_\mathrm{RN})
            + \Gamma\otimes \mathrm{diag}(\rho_\mathrm{GW})
-    $$
+    $
     where $\Gamma$ is the Hellings–Downs ORF built from sky positions  
     `(phi, theta)`.
 
@@ -74,14 +74,9 @@ Arrays are converted into JSON-like objects that preserve shape
 2. Stack `ahat0` across pulsars
 3. Build $\phi_N$ from H0 and $\phi_C$ from H1, then  
    $\Delta\phi = \phi_C - \phi_N$  
-   (slicing to the **last-$K$** coefficients per pulsar via `_idx_lastK`)
+   (slicing to the **last -K** coefficients per pulsar via `_idx_lastK`)
 4. Transfer covariance and coefficients:
-   $$
-   \Sigma^{-1}
-   = \Sigma_0^{-1} + \phi_N^{-1} - \Phi_0^{-1},
-   \qquad
-   \hat a = \Sigma\,\Sigma_0^{-1}\,\hat a_0
-   $$
+   $\Sigma^{-1} = \Sigma_0^{-1} + \phi_N^{-1} - \Phi_0^{-1},  \hat a = \Sigma\,\Sigma_0^{-1}\,\hat a_0 $
 5. Dimension reduction from $\Delta\phi$:
    - `proj_method="mask"`: select active support (recommended/default)
    - `proj_method="svd"`: thin-SVD basis (optional)
@@ -107,7 +102,7 @@ Main function:
 - `spectral_and_pvalue_from_yQ(Q, Sigma_y, os_val, ...) -> p_right`
 
 ### 6) (Optional) Demo: plot $GX^2$ PDF under $H_0$
-`plot_pdf(Q, Sigma_y, os_val, ...)` evaluates the GX$^2$ PDF (via `gx2pdf`)  
+`plot_pdf(Q, Sigma_y, os_val, ...)` evaluates the $GX^2$ PDF (via `gx2pdf`)  
 and marks `os_val` and the mean $\mu = \sum \lambda$.
 
 ---
